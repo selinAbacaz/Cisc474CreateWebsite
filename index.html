@@ -1,55 +1,107 @@
-<body style="display: flex;align-items: center;justify-content: center;background-position: center; background-image: url('https://images.unsplash.com/photo-1523224042829-4731dd15a3bb?q=80&w=776&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+<!DOCTYPE html>
 
-    <img src="https://i.imgur.com/gImETUq.png" alt="gImETUq.png" 
-        style="height:230px;width:300px;z-index:10;position:absolute;top:50px;left:-0.5%;">
+    <head>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    </head>
 
-    <img src="https://i.imgur.com/gImETUq.png" alt="gImETUq.png" 
-        style="height:230px;width:305px;z-index:10;position:absolute;top:50px;left:82%;transform:scaleX(-1);">
 
-    
-    <div style="margin-bottom: 0px;position:absolute; background-color:#f89dac;top: 10vh; border:8px solid #815656; justify-content:center;text-align: center; width:80%">
-        <br><br>
-        <hr style="text-align:center; border-color: #815656; border-width: 2px;border-style:dashed;"> </hr>
-        <div style="display: flex; align-items: center; justify-content: center;">
-            
-            <h1 style="background-clip: text; -webkit-background-clip: text;color: transparent;background-repeat: no-repeat;
-                background-position: center;background-size: cover;z-index: 1;
-                font-size: 180px; background-image: url('https://images.unsplash.com/photo-1555231955-348aa2312e19?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-                display:inline-block; margin: 0 40px;">
+    <body style="background-position: center; background-image: url('https://images.unsplash.com/photo-1523224042829-4731dd15a3bb?q=80&w=776&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+
+        <title> This is the side panel stuff, got this from https://codepen.io/aydin4ik/pen/QqEKmq </title>
+
+        <div class="sidepanel" style="z-index: 20;">
+            <span>
+                -Wouldnt putting little flower pictures in here be so cute !!
+            </span>
+            <div class="line"></div>
+            <span>
                 
-                <b>⟡ Testing ⟡</b>
-            </h1>
+                -collapsable flowers ♡
+            </span>
+            <div class="circle">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <i class="fa fa-chevron-right hide" aria-hidden="true"></i>    
+            </div>
         </div>
-        <hr style="text-align:center; border-color: #815656; border-width: 2px;border-style:dashed;"> </hr>
-        <br><br>
+        <script>
+                $('.circle').click(function() {
+            let spWidth = $('.sidepanel').width();
+            let spMarginLeft = parseInt($('.sidepanel').css('margin-left'),10);
+            let w = (spMarginLeft >= 0 ) ? spWidth * -1 : 0;
+            let cw = (w < 0) ? -w : spWidth-22;
+            $('.sidepanel').animate({
+                marginLeft:w
+            });
+            $('.sidepanel span').animate({
+                marginLeft:w
+            });
+            $('.circle').animate({
+                left:cw
+            },function() {
+                $('.fa-chevron-left').toggleClass('hide');
+                $('.fa-chevron-right').toggleClass('hide');
+            });
+            });
+        </script>
 
-    </div>
+        <title> My flower images !! </title>
+        <img src="https://i.imgur.com/gImETUq.png" alt="gImETUq.png" 
+            style="height:230px;width:300px;z-index:10;position:absolute;top:50px;left:-0.5%;">
+        <img src="https://i.imgur.com/gImETUq.png" alt="gImETUq.png" 
+            style="height:230px;width:305px;z-index:10;position:absolute;top:50px;left:82%;transform:scaleX(-1);">
 
-    
-    
-    <div style="margin-top: 60px; position:relative;z-index:0;background-color:#fcd9df;top:20%; justify-content:center; text-align: center; width:80%; min-height: 450px; display: flex; align-items: center; flex-direction: column;">
-       
-         <img id="image" src="" />
-
-         <button type="button" onclick="show()" id="btnID" style="font-size: 30px; text-align:center; justify-content: center; display: block; margin: 0 auto; position: relative; padding: 10px 20px; border-radius: 5px; background-color: #815656; color: white; border: none; cursor: pointer;">
-             Surprise !
-         </button>
         
-    </div>
+
+        <title>This has the header div and the div main div wrapped in parent div</title>
+        <div style="width:80%; margin: 0 auto;">
+
+            <div style="margin-bottom: 0px; background-color:#f89dac;border:8px solid #815656; justify-content:center;text-align: center; width:100%">
+                <br><br>
+                <hr style="text-align:center; border-color: #815656; border-width: 2px;border-style:dashed;"> </hr>
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    
+                    <h1 style="background-clip: text; -webkit-background-clip: text;color: transparent;background-repeat: no-repeat;
+                        background-position: center;background-size: cover;z-index: 1;
+                        font-size: 180px; background-image: url('https://images.unsplash.com/photo-1555231955-348aa2312e19?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+                        display:inline-block; margin: 0 40px;">
+                        
+                        <b>⟡ Testing ⟡</b>
+                    </h1>
+                </div>
+                <hr style="text-align:center; border-color: #815656; border-width: 2px;border-style:dashed;"> </hr>
+                <br><br>
+
+            </div>
+
+            <div style="margin-top: 60px; position:relative;z-index:0;background-color:#fcd9df;justify-content:center; text-align: center; width:100%; min-height: 450px; display: flex; align-items: center; flex-direction: column;">
+            
+                <img id="image" src="" />
+
+                <button type="button" onclick="show()" id="btnID" style="font-size: 30px; text-align:center; justify-content: center; display: block; margin: 0 auto; position: relative; padding: 10px 20px; border-radius: 5px; background-color: #815656; color: white; border: none; cursor: pointer;">
+                    Press Me !
+                </button>
+                
+            </div>
+        </div>
 
 
-    <script>
-        function show() {
-            /* Get image and change value 
-            of src attribute */
-            let image = document.getElementById("image");
-            image.src = "https://media.tenor.com/nN4erWoujAgAAAAi/toothless-cat-cat.gif"
-            document.getElementById("btnID")
-                .style.display = "none";
-        }
-    </script>
-       
-    
+        <script>
+            function show() {
+                /* Get image and change value 
+                of src attribute */
+                let image = document.getElementById("image");
+                image.src = "https://media.tenor.com/nN4erWoujAgAAAAi/toothless-cat-cat.gif"
+                document.getElementById("btnID")
+                    .style.display = "none";
+            }
+        </script>
+        
+        
 
-</body>
+    </body>
 
+</html>
